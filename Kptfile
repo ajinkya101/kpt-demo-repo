@@ -1,0 +1,15 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: nginx
+info:
+  emails:
+    - bhabalajinkya@gmail.com
+  description: This is an example nginx web server deployment
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/set-label:v0.1
+      configMap:
+        app: nginx
+  validators:
+    - image: gcr.io/kpt-fn/kubeval:v0.1
