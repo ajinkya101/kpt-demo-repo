@@ -12,5 +12,3 @@ pipeline:
       configMap:
         app: nginx
         env: dev
-  validators:
-    - image: gcr.io/kpt-fn/kubeval:v0.1
